@@ -94,14 +94,16 @@ body {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
-    gap: 1rem 0;
+    gap: 1rem 0.5rem;
 }
 
 /*.card {
     padding: 0 2rem 0 2rem;
     height: 300px;
 }*/
-
+.card{
+    background-color: white;
+}
 .image {
     background-color: #9c2d2d;
     height: 388px;
@@ -110,6 +112,38 @@ body {
     width: 275px;
 }
 
+.info{
+    height: 100px;
+    box-shadow: 6px 10px 34px -4px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info>h3{
+    font-size: 21px;
+    padding-top: 0.5rem;
+}
+.info>h4{
+    font-size: 18;
+    color: rgb(71, 71, 71);
+}
+
+.bx{
+    color: rgb(255, 140, 0);
+    font-size: 27px;
+    padding-top: 0.5rem;
+}
+
+.btnFav{
+    border: none;
+    background-color: white;
+}
+
+.btnFav:hover{
+    cursor: pointer;
+}
 /*/////////////////////////////////////////*/
 
 footer {
