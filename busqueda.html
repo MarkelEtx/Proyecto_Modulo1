@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<link rel="stylesheet" href="style.css" />
-		<link
-			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-			rel="stylesheet"
-		/>
-	</head>
 
-	<body>
-		<header class="header">
-			<a href="#" class="logo">Logo</a>
-			<input type="checkbox" id="check" />
-			<label for="check" class="icons">
-				<i class="bx bx-menu" id="menu-icon"></i>
-				<i class="bx bx-x" id="close-icon"></i>
-			</label>
-			<nav class="navbar">
-				<a href="#">Home</a>
-				<a href="#">Busqueda</a>
-			</nav>
-		</header>
-		<main>
-			<section id="buscador">
-				<input type="text" name="name" id="nombre" />
-				<input type="submit" value="Buscar" id="boton" />
-				<button id="btnFav-mostrar"><i class="bx bxs-star"></i></button>
-			</section>
-			<section id="lista"></section>
-		</main>
-		<footer>
-			<p>Make with <i class="bx bxs-heart" id="corazon"></i></p>
-		</footer>
-		<script src="script.js"></script>
-	</body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Logo</a>
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Busqueda</a>
+        </nav>
+    </header>
+    <main>
+        <section id="buscador">
+            <input type="text" name="name" id="nombre" />
+            <input type="submit" value="Buscar" id="boton" />
+            <button id="btnFav-mostrar"><i class="bx bxs-star"></i></button>
+            <input type="submit" value="+" id="boton2" />
+
+        </section>
+        <section id="botonesOcultos">
+            <input type="submit" value="Tipo Amiibo" id="buttonTipo" class="boton3" />
+            <input type="submit" value="Buscar serie" id="buttonSerie" class="boton3" />
+        </section>
+
+        <section id="lista"></section>
+    </main>
+    <footer>
+        <p>Make with <i class="bx bxs-heart" id="corazon"></i></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
 </html>

@@ -89,7 +89,7 @@ body {
 /*/////////////////////////////////////////*/
 
 /* Botones busqueda */
-#boton{
+#boton {
     background-color: rgb(22, 152, 39);
     border-style: none;
     padding: 1rem 2.5rem 1rem 2.5rem;
@@ -99,11 +99,35 @@ body {
     border-radius: 0.5rem;
 }
 
-#boton:hover{
+#boton2 {
+    background-color: black;
+    border-style: none;
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.boton3 {
+    background-color: orange;
+    border-style: none;
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+#botonesOcultos {
+    display: none;
+}
+
+#boton:hover {
     cursor: pointer;
 }
 
-#btnFav-mostrar{
+#btnFav-mostrar {
     border-style: none;
     background-color: rgb(255, 140, 0);
     padding: 0 1rem 0 1rem;
@@ -112,10 +136,34 @@ body {
     font-size: 30px;
 }
 
-#btnFav-mostrar:hover{
+#btnFav-mostrar:hover {
     cursor: pointer;
 }
 
+/*/////////////////AVANZADA////////////////////////*/
+
+#avanzada {
+    display: none;
+    justify-content: space-around;
+}
+
+.mi-select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* Estilo para las opciones */
+.mi-select option {
+    font-size: 14px;
+    background-color: #ff0000;
+    color: #000;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*INCIO container*/
 #lista {
     display: flex;
@@ -185,7 +233,7 @@ body {
 }
 
 .info {
-    height: 100px;
+    height: 120px;
     box-shadow: 6px 10px 34px -4px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     display: flex;
@@ -196,6 +244,7 @@ body {
 .info>h3 {
     font-size: 21px;
     padding-top: 0.5rem;
+    max-width: 270px;
 }
 
 .info>h4 {
@@ -203,7 +252,7 @@ body {
     color: rgb(71, 71, 71);
 }
 
-.bx-star{
+.bx-star {
     color: rgb(255, 140, 0);
     font-size: 27px;
     padding-top: 0.5rem;
@@ -218,7 +267,9 @@ body {
     cursor: pointer;
 }
 
-/*/////////////////////////////////////////*/
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
 
 footer {
     background-color: #9C2D2D;
