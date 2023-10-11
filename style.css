@@ -18,6 +18,16 @@ main{
     padding-bottom: 1rem;
 }
 
+/* //////////////////// Del index */
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+/* /////////////////////// */
+
 .header {
     position: relative;
     top: 0;
@@ -66,7 +76,10 @@ main{
 
 .navOne:hover, .navTwo:hover{
     color: rgb(255, 170, 0);
+    font-weight: 700;
 }
+
+
 
 #check {
     display: none;
@@ -119,21 +132,22 @@ main{
 #boton2 {
     background-color: black;
     border-style: none;
-    padding: 1rem 2.5rem 1rem 2.5rem;
-    font-size: 20px;
-    font-weight: 600;
+    padding: 1rem 1.5rem;
+    font-size: 30px;
+    font-weight: 700;
     color: white;
     border-radius: 0.5rem;
 }
 
 .boton3 {
-    background-color: orange;
+    background-color: rgb(253, 3, 128);
     border-style: none;
     padding: 1rem 2.5rem 1rem 2.5rem;
     font-size: 20px;
     font-weight: 600;
     color: white;
     border-radius: 0.5rem;
+    margin-right: 1rem;
 }
 
 #botonesOcultos {
@@ -297,6 +311,21 @@ footer {
 }
 
 /* TODO: MEDIAQUERYS*/
+@media (max-width: 1049px){
+    #buscador{
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #btnFav-mostrar {
+        background-color: rgb(255, 140, 0);
+        padding: 0.8rem;
+    }
+
+}
 @media (max-width:992px) {
     .header {
         padding: 1.3rem 5%;
@@ -349,4 +378,10 @@ footer {
     #check:checked~.navbar a {
         transform: translateY(0);
     }
+
+    #buscador{
+        width: 80%;
+    }
+
+    
 }
