@@ -101,9 +101,52 @@ body {
     padding: 0 2rem 0 2rem;
     height: 300px;
 }*/
-.card{
+.card {
     background-color: white;
 }
+
+@keyframes rotate-center {
+    0% {
+        transform: scale(1);
+        filter: blur(.01px);
+    }
+
+    100% {
+        transform: scale(2);
+        filter: blur(12px);
+        opacity: 0
+    }
+}
+
+@keyframes shake-horizontal {
+
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-10px)
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: translateX(10px)
+    }
+
+    80% {
+        transform: translateX(8px)
+    }
+
+    90% {
+        transform: translateX(-8px)
+    }
+}
+
 .image {
     background-color: #9c2d2d;
     height: 388px;
@@ -112,38 +155,40 @@ body {
     width: 275px;
 }
 
-.info{
+.info {
     height: 100px;
-    box-shadow: 6px 10px 34px -4px rgba(0,0,0,0.1);
+    box-shadow: 6px 10px 34px -4px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.info>h3{
+.info>h3 {
     font-size: 21px;
     padding-top: 0.5rem;
 }
-.info>h4{
+
+.info>h4 {
     font-size: 18;
     color: rgb(71, 71, 71);
 }
 
-.bx{
+.bx-star {
     color: rgb(255, 140, 0);
     font-size: 27px;
     padding-top: 0.5rem;
 }
 
-.btnFav{
+.btnFav {
     border: none;
     background-color: white;
 }
 
-.btnFav:hover{
+.btnFav:hover {
     cursor: pointer;
 }
+
 /*/////////////////////////////////////////*/
 
 footer {
