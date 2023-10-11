@@ -64,6 +64,10 @@ main{
     margin-left: 2.5rem;
 }
 
+.navOne:hover, .navTwo:hover{
+    color: rgb(255, 170, 0);
+}
+
 #check {
     display: none;
 }
