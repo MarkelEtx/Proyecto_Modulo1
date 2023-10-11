@@ -1,8 +1,14 @@
 let button = document.querySelector("#boton");
+let btnAvanzada = document.querySelector("#boton2");
 let buttonFav = document.querySelector("#btnFav-mostrar");
 let textInput = document.querySelector("#nombre");
 let lista = document.querySelector("#lista");
+let buscador = document.querySelector("#buscador");
+let buscadorAvanzado = document.querySelector("#avanzada");
+let buttonTipo = document.querySelector("#buttonTipo");
+let buttonSerie = document.querySelector("#buttonSerie");
 let arrFavs; //declaramos variable
+let ver = true;
 
 if (!localStorage.getItem("favoritos")) {
     //
@@ -13,7 +19,32 @@ if (!localStorage.getItem("favoritos")) {
 console.log("pepe", arrFavs);
 
 button.addEventListener("click", function () {
-    fetch(`https://amiiboapi.com/api/amiibo/?name=${textInput.value}`)
+    busquedapepe(1);
+});
+buttonTipo.addEventListener("click", function () {
+    busquedapepe(2);
+});
+buttonSerie.addEventListener("click", function () {
+    busquedapepe(3);
+});
+
+function busquedapepe(num) {
+    let url;
+    switch (num) {
+        case 1:
+            url = "amiibo/?name";
+            break;
+        case 2:
+            url = "amiibo/?type";
+            break;
+        case 3:
+            url = "amiibo/?amiiboSeries";
+            break;
+        default:
+            break;
+    }
+    console.log(`https://amiiboapi.com/api/${url}=${textInput.value}`);
+    fetch(`https://amiiboapi.com/api/${url}=${textInput.value}`)
         .then((response) => response.json())
         .then((datos) => {
             lista.innerHTML = "";
@@ -63,7 +94,9 @@ button.addEventListener("click", function () {
         .catch((error) => {
             console.error("Ocurrió un error:", error);
         });
-});
+}
+
+
 
 buttonFav.addEventListener("click", function () {
     lista.innerHTML = "";
@@ -97,3 +130,16 @@ buttonFav.addEventListener("click", function () {
         console.log(element);
     });
 });
+
+
+btnAvanzada.addEventListener("click", function () {
+    console.log(document.querySelectorAll(".btn-inv"));
+    if (ver) {
+        document.querySelector("#botonesOcultos").style.display = "flex";
+
+    } else {
+        document.querySelector("#botonesOcultos").style.display = "none";
+    }
+    ver = !ver;
+
+})
