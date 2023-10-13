@@ -20,36 +20,55 @@ main {
 }
 
 /* //////////////////// Del index */
-
 .container{
+    padding: 2rem 1rem 0 1rem;
+    display: flex;
+}
+.infoProyect{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     height: auto;
+    width: 60%;
     
 }
 
 .titleMain{
-    text-align: center;
     padding: 0.2rem;
 }
 .titleMain h1{
     font-weight: 900;
-    font-size: 130px;
+    font-size: 150px;
+    font-family: 'Gabarito', sans-serif;
 
 }
 
-.titleMain h2{
-    font-weight: 700;
-    font-size: 130px;
-
+.mainImg{
+    width: 40%;
+    height: auto;
+}
+.mainImg>img{
+    padding: 5rem;
 }
 
-.titleMain h3{
-    font-weight: 700;
-    font-size: 90px;
+.btnTry {
+    background-color: rgb(18, 180, 229);
+    border-style: none;
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
 
+
+
+.btnTry:hover {
+    cursor: pointer;
+    background-color: rgb(1, 206, 252);
+    font-weight: 900;
 }
 
 
