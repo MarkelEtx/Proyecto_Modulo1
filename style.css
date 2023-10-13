@@ -358,7 +358,11 @@ main {
     font-size: 27px;
     padding-top: 0.5rem;
 }
-
+.bx-x {
+    color: rgb(255, 0, 0);
+    font-size: 27px;
+    padding-top: 0.5rem;
+}
 .btnFav {
     border: none;
     background-color: white;
@@ -371,6 +375,8 @@ main {
 #titGif {
     font-size: 5rem;
 }
+
+
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -397,6 +403,30 @@ footer {
         padding: 0.8rem;
     }
 
+    
+    .infoProyect{
+        justify-content: center;
+        width: 100%;
+        
+    }
+    
+    .titleMain{
+        padding: 1rem;
+    }
+
+    .titleMain>h1{
+        font-size: 135px;
+    }
+    
+    
+    .mainImg{
+        visibility: hidden;
+    }
+
+    .txt{
+        padding: 1rem 0;
+    }
+
 }
 @media (max-width:992px) {
     .header {
@@ -405,6 +435,17 @@ footer {
 }
 
 @media (max-width:768px) {
+
+    
+    .titleMain{
+        text-align: center;
+    }
+
+    .titleMain>h1{
+        font-size: 120px;
+    }
+    
+
     .icons {
         display: inline-flex;
     }
