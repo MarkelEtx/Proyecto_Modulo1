@@ -73,6 +73,12 @@ function busquedaamiibo(num) {
 							carta.addEventListener("animationend", function () {
 								carta.style.animation = "";
 							});
+							//para borrar el favorito
+							let storedFav = JSON.parse(localStorage.getItem("favoritos"));
+							let FavDelete = btnContainer.value;
+							let updateFav = storedFav.filter((item) => item !== FavDelete);
+							localStorage.setItem("favoritos", JSON.stringify(updateFav));
+							btnFav.className = "bx bx-star";
 						} else {
 							btnFav.style.animation = "rotate-center 0.5s ease-in-out";
 							arrFavs.push(btnContainer.value);
@@ -80,6 +86,7 @@ function busquedaamiibo(num) {
 							btnFav.addEventListener("animationend", function () {
 								btnFav.style.animation = "";
 							});
+							btnFav.className = "bx bx-x";
 						}
 					});
 					descripcion.appendChild(h3);
@@ -88,6 +95,12 @@ function busquedaamiibo(num) {
 					descripcion.appendChild(btnContainer);
 					carta.appendChild(descripcion);
 					lista.appendChild(carta);
+					// cosa de botones
+					if (arrFavs.includes(btnContainer.value)) {
+						btnFav.className = "bx bx-x";
+					} else {
+						btnFav.className = "bx bx-star";
+					}
 				});
 			} else {
 				lista.innerHTML = "";
