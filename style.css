@@ -35,13 +35,22 @@ main {
 }
 
 .titleMain{
-    padding: 0.2rem;
+    padding: 0.5rem;
 }
 .titleMain h1{
     font-weight: 900;
     font-size: 150px;
     font-family: 'Gabarito', sans-serif;
 
+}
+.txt{
+    text-align: justify;
+    padding: 0.5rem 0 2rem 0;
+}
+.txt>p{
+    width: 90%;
+    font-size: 30px;
+    font-weight: 100;
 }
 
 .mainImg{
@@ -352,23 +361,24 @@ main {
     font-size: 20px;
     color: rgb(71, 71, 71);
 }
+.bx-x {
+    color: rgb(255, 0, 0);
+    font-size: 27px;
+    padding-top: 0.5rem;
+}
 
 .bx-star {
     color: rgb(255, 140, 0);
     font-size: 27px;
     padding-top: 0.5rem;
 }
-.bx-x {
-    color: rgb(255, 0, 0);
-    font-size: 27px;
-    padding-top: 0.5rem;
-}
-.btnFav {
+
+.btnFav, #btnDelFav {
     border: none;
     background-color: white;
 }
 
-.btnFav:hover {
+.btnFav:hover, #btnDelFav:hover{
     cursor: pointer;
 }
 
@@ -416,6 +426,10 @@ footer {
 
     .titleMain>h1{
         font-size: 135px;
+    }
+
+    .txt>p{
+        width: 100%;
     }
     
     

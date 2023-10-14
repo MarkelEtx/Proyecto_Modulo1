@@ -69,7 +69,8 @@ function busquedaamiibo(num) {
 					btnFav.className = "bx bx-star";
 					btnFav.addEventListener("click", function () {
 						if (arrFavs.includes(btnContainer.value)) {
-							carta.style.animation = "shake-horizontal 0.8s linear both";
+							/* carta.style.animation = "shake-horizontal 0.8s linear both"; */
+							btnFav.style.animation = "rotate-center 0.5s ease-in-out";
 							carta.addEventListener("animationend", function () {
 								carta.style.animation = "";
 							});
@@ -140,11 +141,16 @@ buttonFav.addEventListener("click", function () {
 				h3.textContent = `${datosMostrar.name}`;
 				let h4 = document.createElement("h4");
 				h4.textContent = `${datosMostrar.gameSeries}`;
+				let btnContainer = document.createElement("button");
+				btnContainer.id = `btnDelFav`;
+				btnContainer.value = `${element.head}${element.tail}`;
+				let btnDelFav = document.createElement("i");
+				btnDelFav.className = "bx bx-x";
 
 				descripcion.appendChild(h3);
 				descripcion.appendChild(h4);
-				/* btnContainer.appendChild(btnFav); */
-				/* descripcion.appendChild(btnContainer); */
+				btnContainer.appendChild(btnDelFav);
+				descripcion.appendChild(btnContainer);
 				carta.appendChild(imgamiibo);
 				carta.appendChild(descripcion);
 				lista.appendChild(carta);
