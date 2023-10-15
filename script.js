@@ -1,6 +1,7 @@
 let button = document.querySelector("#boton");
 let btnAvanzada = document.querySelector("#boton2");
 let buttonFav = document.querySelector("#btnFav-mostrar");
+let buttonFavDelete = document.querySelector("#btnFav-mostrar");
 let textInput = document.querySelector("#nombre");
 let lista = document.querySelector("#lista");
 let buscador = document.querySelector("#buscador");
@@ -122,6 +123,12 @@ function busquedaamiibo(num) {
 }
 
 buttonFav.addEventListener("click", function () {
+	quitarFav();
+});
+
+
+
+function quitarFav() {
 	lista.innerHTML = "";
 	JSON.parse(localStorage.getItem("favoritos")).forEach((element) => {
 		fetch(`https://amiiboapi.com/api/amiibo/?id=${element}`)
@@ -140,9 +147,20 @@ buttonFav.addEventListener("click", function () {
 				h3.textContent = `${datosMostrar.name}`;
 				let h4 = document.createElement("h4");
 				h4.textContent = `${datosMostrar.gameSeries}`;
-
+				let btnDel = document.createElement("button");
+				btnDel.textContent = "Eliminar";
+				btnDel.className = "eliminarFavs";
+				btnDel.value = `${element}`;
+				btnDel.addEventListener("click", function () {
+					let favs = JSON.parse(localStorage.getItem('favoritos'));
+					let indiceAEliminar = favs.indexOf(btnDel.value);
+					favs.splice(indiceAEliminar, 1);
+					localStorage.setItem('favoritos', JSON.stringify(favs));
+					quitarFav();
+				});
 				descripcion.appendChild(h3);
 				descripcion.appendChild(h4);
+				descripcion.appendChild(btnDel);
 				/* btnContainer.appendChild(btnFav); */
 				/* descripcion.appendChild(btnContainer); */
 				carta.appendChild(imgamiibo);
@@ -151,7 +169,9 @@ buttonFav.addEventListener("click", function () {
 			})
 			.catch();
 	});
-});
+
+}
+
 
 btnAvanzada.addEventListener("click", function () {
 	console.log(document.querySelectorAll(".btn-inv"));
