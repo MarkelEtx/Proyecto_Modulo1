@@ -141,16 +141,8 @@ buttonFav.addEventListener("click", function () {
 				h3.textContent = `${datosMostrar.name}`;
 				let h4 = document.createElement("h4");
 				h4.textContent = `${datosMostrar.gameSeries}`;
-				let btnContainer = document.createElement("button");
-				btnContainer.id = `btnDelFav`;
-				btnContainer.value = `${element.head}${element.tail}`;
-				let btnDelFav = document.createElement("i");
-				btnDelFav.className = "bx bx-x";
-
 				descripcion.appendChild(h3);
 				descripcion.appendChild(h4);
-				btnContainer.appendChild(btnDelFav);
-				descripcion.appendChild(btnContainer);
 				carta.appendChild(imgamiibo);
 				carta.appendChild(descripcion);
 				lista.appendChild(carta);
