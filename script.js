@@ -70,7 +70,8 @@ function busquedaamiibo(num) {
 					btnFav.className = "bx bx-star";
 					btnFav.addEventListener("click", function () {
 						if (arrFavs.includes(btnContainer.value)) {
-							carta.style.animation = "shake-horizontal 0.8s linear both";
+							/* carta.style.animation = "shake-horizontal 0.8s linear both"; */
+							btnFav.style.animation = "rotate-center 0.5s ease-in-out";
 							carta.addEventListener("animationend", function () {
 								carta.style.animation = "";
 							});
