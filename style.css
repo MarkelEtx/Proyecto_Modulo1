@@ -426,6 +426,12 @@ footer {
     min-height: 50%;
 }
 
+footer>p{
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+}
+
 /* TODO: MEDIAQUERYS*/
 @media (max-width: 1049px) {
     #buscador {
