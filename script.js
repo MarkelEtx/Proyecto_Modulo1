@@ -1,6 +1,8 @@
 let button = document.querySelector("#boton");
 let btnAvanzada = document.querySelector("#boton2");
+
 let buttonFav = document.querySelector("#btnFav-mostrar");
+let buttonFavDelete = document.querySelector("#btnFav-mostrar");
 let textInput = document.querySelector("#nombre");
 let lista = document.querySelector("#lista");
 let buscador = document.querySelector("#buscador");
@@ -122,40 +124,73 @@ function busquedaamiibo(num) {
 }
 
 buttonFav.addEventListener("click", function () {
-	lista.innerHTML = "";
-	JSON.parse(localStorage.getItem("favoritos")).forEach((element) => {
-		fetch(`https://amiiboapi.com/api/amiibo/?id=${element}`)
-			.then((response) => response.json())
-			.then((datosFav) => {
-				let datosMostrar = datosFav.amiibo;
-				let carta = document.createElement("div");
-				carta.className = "card";
-				let imgamiibo = document.createElement("img");
-				imgamiibo.className = "image";
-				imgamiibo.src = datosMostrar.image;
-				imgamiibo.style.backgroundColor = "rgb(255, 140, 0";
-				let descripcion = document.createElement("div");
-				descripcion.className = "info";
-				let h3 = document.createElement("h3");
-				h3.textContent = `${datosMostrar.name}`;
-				let h4 = document.createElement("h4");
-				h4.textContent = `${datosMostrar.gameSeries}`;
-				descripcion.appendChild(h3);
-				descripcion.appendChild(h4);
-				carta.appendChild(imgamiibo);
-				carta.appendChild(descripcion);
-				lista.appendChild(carta);
-			})
-			.catch();
-	});
+	quitarFav();
 });
+
+
+
+function quitarFav() {
+	lista.innerHTML = "";
+	console.log(JSON.parse(localStorage.getItem("favoritos")).length);
+	if (JSON.parse(localStorage.getItem("favoritos")).length != 0) {
+		JSON.parse(localStorage.getItem("favoritos")).forEach((element) => {
+			fetch(`https://amiiboapi.com/api/amiibo/?id=${element}`)
+				.then((response) => response.json())
+				.then((datosFav) => {
+					let datosMostrar = datosFav.amiibo;
+					let carta = document.createElement("div");
+					carta.className = "card";
+					let imgamiibo = document.createElement("img");
+					imgamiibo.className = "image";
+					imgamiibo.src = datosMostrar.image;
+					imgamiibo.style.backgroundColor = "rgb(255, 140, 0";
+					let descripcion = document.createElement("div");
+					descripcion.className = "info";
+					let h3 = document.createElement("h3");
+					h3.textContent = `${datosMostrar.name}`;
+					let h4 = document.createElement("h4");
+					h4.textContent = `${datosMostrar.gameSeries}`;
+					let btnDel = document.createElement("i");
+					btnDel.className = "bx bx-x";
+					btnDel.value = `${element}`;
+					btnDel.addEventListener("click", function () {
+						let favs = JSON.parse(localStorage.getItem('favoritos'));
+						let indiceAEliminar = favs.indexOf(btnDel.value);
+						favs.splice(indiceAEliminar, 1);
+						localStorage.setItem('favoritos', JSON.stringify(favs));
+						quitarFav();
+					});
+					descripcion.appendChild(h3);
+					descripcion.appendChild(h4);
+					descripcion.appendChild(btnDel);
+					/* btnContainer.appendChild(btnFav); */
+					/* descripcion.appendChild(btnContainer); */
+					carta.appendChild(imgamiibo);
+					carta.appendChild(descripcion);
+					lista.appendChild(carta);
+				})
+				.catch();
+		});
+	} else {
+		let texto = document.createElement("span");
+		texto.textContent = "¡No Hay Favoritos!";
+		texto.id = "textAnt";
+		lista.appendChild(texto);
+
+	}
+
+
+}
+
 
 btnAvanzada.addEventListener("click", function () {
 	console.log(document.querySelectorAll(".btn-inv"));
 	if (ver) {
 		document.querySelector("#botonesOcultos").style.display = "flex";
+		btnAvanzada.value = "-";
 	} else {
 		document.querySelector("#botonesOcultos").style.display = "none";
+		btnAvanzada.value = "+";
 	}
 	ver = !ver;
 });

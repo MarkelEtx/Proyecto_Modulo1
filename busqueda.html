@@ -1,64 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<link rel="stylesheet" href="style.css" />
-		<link
-			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
 
-	<body>
-		<header class="header">
-			<a href="/index.html" class="logo"
-				><img src="/Recursos/Amiibo.png" alt=""
-			/></a>
-			<input type="checkbox" id="check" />
-			<label for="check" class="icons">
-				<i class="bx bx-menu" id="menu-icon"></i>
-				<i class="bx bx-x" id="close-icon"></i>
-			</label>
-			<nav class="navbar">
-				<a class="navOne" href="/index.html">Home</a>
-				<a class="navTwo activeTab" href="/busqueda.html">Busqueda</a>
-			</nav>
-		</header>
-		<main>
-			<section id="buscador">
-				<input type="text" name="name" id="nombre" />
-				<input type="submit" value="Buscar Todos" id="boton" />
-				<button id="btnFav-mostrar"><i class="bx bxs-star"></i></button>
-				<input type="submit" value="+" id="boton2" />
-				<section id="botonesOcultos">
-					<input
-						type="submit"
-						value="Tipo Amiibo"
-						id="buttonTipo"
-						class="boton3"
-					/>
-					<input
-						type="submit"
-						value="Buscar serie"
-						id="buttonSerie"
-						class="boton3"
-					/>
-				</section>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css" />
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+	<header class="header">
+		<a href="/index.html" class="logo"><img src="/Recursos/Amiibo.png" alt="" /></a>
+		<input type="checkbox" id="check" />
+		<label for="check" class="icons">
+			<i class="bx bx-menu" id="menu-icon"></i>
+			<!-- <i class="bx bx-x" id="close-icon"></i> -->
+			<i class='bx bx-vertical-top' id="close-icon"></i>
+		</label>
+		<nav class="navbar">
+			<a class="navOne" href="/index.html">Home</a>
+			<a class="navTwo activeTab" href="/busqueda.html">Busqueda</a>
+		</nav>
+	</header>
+	<main>
+		<section id="buscador">
+			<input type="text" name="name" id="nombre" />
+			<input type="submit" value="Buscar Todos" id="boton" />
+			<button id="btnFav-mostrar"><i class="bx bxs-star"></i></button>
+			<input type="submit" value="+" id="boton2" />
+			<section id="botonesOcultos">
+				<input type="submit" value="Tipo Amiibo" id="buttonTipo" class="boton3" />
+				<input type="submit" value="Buscar serie" id="buttonSerie" class="boton3" />
 			</section>
+		</section>
 
-			<section id="lista"></section>
-		</main>
-		<footer>
-			<p>Make with <i class="bx bxs-heart" id="corazon"></i></p>
-		</footer>
-		<script src="script.js"></script>
-	</body>
+		<section id="lista"></section>
+	</main>
+	<footer>
+		<p>Make with <i class="bx bxs-heart" id="corazon"></i></p>
+	</footer>
+	<script src="script.js"></script>
+</body>
+
 </html>
